@@ -1,0 +1,137 @@
+# http://hitomi.la
+alert dns any any -> any 53 (msg:"Hitomi"; dns_query; content:"ltn.hitomi.la"; sid:10001; rev:1;)
+
+# http://kass.org.kp/
+alert dns any any -> any 53 (msg:"Kass"; dns_query; content:"kass.org.kp"; sid:10002; rev:1;)
+
+# http://kcna.kp/
+alert tcp any any -> any 80 (msg:"Kcna"; content:"GET /"; content:"Host: kcna.kp"; sid:10003; rev:1;)
+
+# http://kitribob.wiki/wiki/
+alert tcp any any -> any 80 (msg:"BoB Wiki"; content:"GET /wiki"; content:"Host: kitribob.wiki"; sid:10004; rev:1;)
+
+# http://ks8282.com/
+alert tcp any any -> any 80 (msg:"Casino"; content:"GET /"; content:"Host: ks8282.com"; sid:10005; rev:1;)
+
+# http://linoit.com/users/men1212/canvases/19%EA%B8%88%20
+alert tcp any any -> any 80 (msg:"19gum"; content:"GET /users/men1212/canvases/19%EA%B8%88%20"; content:"Host: naevr.com"; sid:10006; rev:1;)
+
+# http://naevr.com/
+alert tcp any any -> any 80 (msg:"Fake Naver"; content:"GET /"; content:"Host: naevr.com"; sid:10007; rev:1;)
+
+# http://named.com/game/ladder/v2_index.php
+alert tcp any any -> any 80 (msg:"Ladder Game 1"; content:"GET /game/ladder/v2_index.php HTTP/1.1"; content:"Host: named.com"; sid:10008; rev:1;)
+alert tcp any any -> any 80 (msg:"Ladder Game 2"; content:"GET /game/ladder/ HTTP/1.1"; content:"Host: named.com"; sid:11008; rev:1;)
+alert tcp any any -> any 80 (msg:"Ladder Game 3"; content:"GET /game/ HTTP/1.1"; content:"Host: named.com"; sid:12008; rev:1;)
+alert tcp any any -> any 80 (msg:"Ladder Game 4"; content:"GET /"; content:"Host: named.com"; sid:13008; rev:1;)
+
+# http://naver6.com
+alert tcp any any -> any 80 (msg:"Naver6"; content:"GET /"; content:"Host: naver6.com"; sid:10009; rev:1;)
+
+# http://onaratv.com/
+#There is no web page !!
+
+# http://pornpros.com
+alert tcp any any -> any 80 (msg:"Porno Pros"; content:"GET /"; content:"Host: pornpros.com"; sid:10011; rev:1;)
+
+# http://rodong.rep.kp/
+alert tcp any any -> any 80 (msg:"NK site: rodong"; content:"GET /"; content:"Host: rodong.rep.kp"; sid:10012; rev:1;)
+
+# http://snoopspy.com/download
+alert tcp any any -> any 80 (msg:"Snoopspy Download 1"; content:"GET /"; content:"Host: snoopspy.com"; sid:10013; rev:1;)
+alert tcp any any -> any 80 (msg:"Snoopspy Download 2"; content:"GET /download"; content:"Host: snoopspy.com"; sid:11013; rev:1;)
+
+# http://test.gilgil.net/streaming/test.mp4
+drop tcp any any -> any 80 (msg:"MP4 Download"; content:"GET /streaming/test.mp4"; content:"Host: test.gilgil.net"; sid:10014; rev:1;)
+
+# http://uriminzokkiri.com
+alert tcp any any -> any 80 (msg:"NK site: uriminzok 1"; content:"GET /"; content:"Host: uriminzokkiri.com"; sid:10015; rev:1;)
+alert dns any any -> any 53 (msg:"NK site: uriminzok 2"; dns_query; content:"uriminzokkiri.com"; sid:11015; rev:1;)
+
+# http://www.4shared.com
+alert tls any any -> any 443 (msg:"4shared"; tls_sni; content:"4shared.com"; sid:10016; rev:1;)
+
+# http://www.bamwar25.com/
+alert tcp any any -> any 80 (msg:"OFFI"; content:"GET / HTTP/1.1"; content:"Host: www.bamwar25.com"; sid:10017; rev:1;)
+
+# http://www.faa25.com/
+alert tcp any any -> any 80 (msg:"Star CASINO"; content:"GET / HTTP/1.1"; content:"Host: www.faa25.com"; sid:10018; rev:1;)
+
+# http://www.ilbe.com/ilbe
+alert tcp any any -> any 80 (msg:"Ilbe"; content:"GET /ilbe HTTP/1.1"; content:"Host: www.ilbe.com"; sid:10019; rev:1;)
+
+# http://www.kimmadam.net/
+alert tcp any any -> any 80 (msg:"KimMadam"; content:"GET / HTTP/1.1"; content:"Host: www.kimmadam.net"; sid:10020; rev:1;)
+
+# http://www.minjok.com
+alert tcp any any -> any 80 (msg:"MinJok"; content:"GET / HTTP/1.1"; content:"Host: www.minjok.com"; sid:10021; rev:1;)
+
+# http://www.narutoxxx.com
+alert tcp any any -> any 80 (msg:"Narutoxxx"; content:"GET /"; content:"Host: www.narutoxxx.com"; sid:10022; rev:1;)
+
+# http://www.naver.cm
+alert tcp any any -> any 80 (msg:"Fake Naver 2"; content:"GET /"; content:"Host: www.naver.cm"; sid:10023; rev:1;)
+
+# http://www.ryomyong.com
+alert tcp any any -> any 80 (msg:"RyoMyong"; content:"GET /"; content:"Host: www.ryomyong.com"; sid:10024; rev:1;)
+
+# http://www.sedisk.com
+alert tcp any any -> any 80 (msg:"Sedisk"; content:"GET /"; content:"Host: www.sedisk.com"; sid:10025; rev:1;)
+
+# http://www.sk386.com/
+alert tcp any any -> any 80 (msg:"Bakara"; content:"GET /"; content:"Host: www.sk386.com"; sid:10026; rev:1;)
+
+# http://www.tcosc.net/
+alert tls any any -> any 443 (msg:"Tcosc"; tls_sni; content:"tcosc.net"; sid:10027; rev:1;)
+
+# http://www.torenzoa.net
+alert tcp any any -> any 80 (msg:"Torenzoa"; content:"GET /"; content:"Host: www.torenzoa.net"; sid:10028; rev:1;)
+
+# http://www.umj262.com/
+# 502 Error!
+
+# http://www.uriminzokkiri.com
+# same site again
+
+# http://www.winclub88.net/my/4D.html
+alert tcp any any -> any 80 (msg:"Winclub88"; content:"GET /"; content:"Host: www.winclub88.net"; sid:11032; rev:1;)
+
+# https://graphgame.net/
+alert tls any any -> any 443 (msg:"GraphGame 1"; tls_sni; content:"graphgame.net"; sid:10033; rev:1;)
+alert dns any any -> any 53 (msg:"GraphGame 2"; dns_query; content:"graphgame.net"; sid:11033; rev:1;)
+
+# https://mujige53770.wixsite.com
+#404 Error
+
+# https://sex.com
+alert dns any any -> any 53 (msg:"Porn page 1"; dns_query; content:"sex.com"; sid:10035; rev:1;)
+alert tls any any -> any 443 (msg:"porn page 2"; tls_sni; content:"sex.com"; sid: 11035; rev:1;)
+
+# https://torrenthaja.com
+alert dns any any -> any 53 (msg:"TorrentHaja 1"; dns_query; content:"torrenthaja.com"; sid:10036; rev:1;)
+alert tls any any -> any 443 (msg:"TOrrentHaja 2"; tls_sni; content:"torrenthaja.com"; sid:11036; rev:1;)
+
+# https://torrentkim10.net
+alert dns any any -> any 53 (msg:"fake Torrentkim 1"; dns_query; content:"torrentkim10.net"; sid:10037; rev:1;)
+alert tls any any -> any 443 (msg:"fake Torrentkim 2"; tls_sni; content:"cdn.syndication.twimg.com"; sid:11037; rev:1;)
+
+# https://webtoon.bamtoki.com
+alert dns any any -> any 53 (msg:"Bamtoki 1"; dns_query; content:"webtoon.bamtoki.com"; sid:10038; rev:1;)
+alert tls any any -> any 443 (msg:"Bamtoki 2"; tls_sni; content:"iu.bamtoki.com"; sid:11038; rev:1;)
+
+# https://www.facebook.com/profile.php?id=1000190078826334bs
+# Can't use this blog.
+
+# https://www.mtbucks.com
+alert dns any any -> any 53 (msg:"Mtbucks 1"; dns_query; content:"www.mtbucks.com"; sid:10040; rev:1;)
+
+# https://www.opioids.com/offshorepharmacy/index.html
+alert tls any any -> any 443 (msg:"Drug"; content:"www.opioids.com"; sid:10041; rev:1;)
+
+# https://www.phishtank.com/
+alert dns any any -> any 53 (msg:"Phishtank 1"; dns_query; content:"www.phishtank.com"; sid:10042; rev:1;)
+alert tls any any -> any 443 (msg:"Phishtank 2"; tls_sni; content:"www.phishtank.com"; sid:11042; rev:1;)
+
+# https://yobit.net/en/dice/
+alert dns any any -> any 53 (msg:"Dice 1"; dns_query; content:"yobit.net"; sid:10043; rev:1;)
+alert tls any any -> any 443 (msg:"Dice 2"; tls_sni; content:"js.pusher.com"; sid:10044; rev:1;)
